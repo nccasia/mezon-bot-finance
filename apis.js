@@ -38,7 +38,6 @@ async function fetchMarketCap(symbol) {
     const response = await axios.get(
       `${BASE_URL}/stock/metric?symbol=${symbol}&metric=all&token=${API_KEY}`
     );
-    console.log("data fetch", response.data);
     return response.data.metric.marketCapitalization;
   } catch (error) {
     console.error("Error fetching market cap:", error);
